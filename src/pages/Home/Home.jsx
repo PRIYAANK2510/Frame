@@ -4,6 +4,7 @@ const Home = () => {
 	return (
 		<div className='homePage'>
 			<HeroBanner />
+			<div style={{ height: 2000 }}></div>
 		</div>
 	);
 };

@@ -87,9 +87,11 @@ const Header = () => {
 					>
 						TV Shows
 					</li>
-					<li className='menuItem'>
-						<IoSearchOutline onClick={openSearch} />
-					</li>
+					{show === 'show' && (
+						<li className='menuItem'>
+							<IoSearchOutline onClick={openSearch} />
+						</li>
+					)}
 				</ul>
 				<div className='mobileMenuItems'>
 					<IoSearchOutline onClick={openSearch} />
