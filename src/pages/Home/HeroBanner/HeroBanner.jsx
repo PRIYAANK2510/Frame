@@ -8,6 +8,7 @@ import './HeroBanner.scss';
 
 const HeroBanner = () => {
 	const { url } = useSelector((state) => state.home);
+
 	const [background, setBackground] = useState('');
 	const [query, setQuery] = useState('');
 	const navigate = useNavigate();
@@ -15,9 +16,10 @@ const HeroBanner = () => {
 
 	useEffect(() => {
 		const bg =
-			url.backdrop + data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
+			url?.backdrop + data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
 		setBackground(bg);
-	}, [data]);
+	}, [data, url]);
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (query.length > 0) {
