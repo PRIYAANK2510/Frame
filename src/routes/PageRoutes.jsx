@@ -24,7 +24,7 @@ const PageRoutes = () => {
 					element={<Error />}
 				/>
 			</Routes>
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 };

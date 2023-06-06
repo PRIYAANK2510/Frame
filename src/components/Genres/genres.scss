@@ -1,0 +1,13 @@
+.genres {
+	display: flex;
+	gap: 5px;
+	.genre {
+		background-color: hsl(1, 45%, 50%);
+		padding: 3px 5px;
+		font-size: 12px;
+		border-radius: 4px;
+		color: hsl(195, 61%, 8%);
+		white-space: nowrap;
+		box-shadow: 8px 16px 16px hsl(195 61% 8% / 0.25);
+	}
+}
