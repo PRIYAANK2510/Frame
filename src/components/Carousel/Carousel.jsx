@@ -5,12 +5,12 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import NoMovie from '../../assets/no_movie.svg';
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
+import Genres from '../Genres/Genres';
 import LazyImage from '../LazyLoadImage/LazyImage';
 import CircleRating from '../circleRating/CircleRating';
-import Genres from '../genres/Genres';
 import './carousel.scss';
 
-const Carousel = ({ data, loading, endpoint }) => {
+const Carousel = ({ title, data, loading, endpoint }) => {
 	const carouselContainer = useRef();
 	const { url } = useSelector((state) => state.home);
 	const navigate = useNavigate();
@@ -42,6 +42,7 @@ const Carousel = ({ data, loading, endpoint }) => {
 	return (
 		<div className='carousel'>
 			<ContentWrapper>
+				{title && <div className='carouselTitle'>{title}</div>}
 				<SlArrowLeft
 					className='carouselLeftNav arrow'
 					onClick={() => navigation('left')}
