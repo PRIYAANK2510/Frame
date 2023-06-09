@@ -5,7 +5,6 @@ import Similar from './Carousel/Similar';
 import Cast from './Cast/Cast';
 import DetailBanner from './DetailsBanner/DetailBanner';
 import VideoSection from './VideoSection/VideoSection';
-import './details.scss';
 
 const Details = () => {
 	const { mediaType, id } = useParams();

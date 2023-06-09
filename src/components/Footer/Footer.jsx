@@ -18,12 +18,20 @@ const Footer = () => {
 					and let's celebrate the magic of the silver screen together!
 				</div>
 				<div className='socialIcons'>
-					<span className='icon'>
+					<a
+						className='icon'
+						href='https://github.com/PRIYAANK2510'
+						target='_blank'
+					>
 						<AiFillGithub />
-					</span>
-					<span className='icon'>
+					</a>
+					<a
+						className='icon'
+						href='https://www.linkedin.com/in/priyaank-25102000/'
+						target='_blank'
+					>
 						<AiFillLinkedin />
-					</span>
+					</a>
 				</div>
 			</ContentWrapper>
 		</footer>

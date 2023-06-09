@@ -1,0 +1,138 @@
+@import '../../../mixins.scss';
+
+.castbanner {
+	width: 100%;
+	background-color: hsl(195, 62%, 9%);
+	padding-top: 100px;
+	margin-bottom: 50px;
+	@include md {
+		margin-bottom: 0;
+		padding-top: 120px;
+		min-height: 700px;
+	}
+	.content {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		gap: 25px;
+		@include md {
+			gap: 50px;
+			flex-direction: row;
+		}
+		.left {
+			flex-shrink: 0;
+			.personImg {
+				width: 100%;
+				aspect-ratio: 1/1;
+				object-fit: cover;
+				border-radius: 50%;
+				display: block;
+				@include md {
+					max-width: 350px;
+				}
+			}
+		}
+		.right {
+			color: whitesmoke;
+			.titleName {
+				font-size: 28px;
+				line-height: 40px;
+				@include md {
+					font-size: 34px;
+					line-height: 44px;
+				}
+			}
+			.birthday {
+				font-size: 16px;
+				color: whitesmoke;
+				text-align: justify;
+				font-weight: 300;
+				line-height: 24px;
+				margin-bottom: 15px;
+				font-style: italic;
+				opacity: 0.5;
+				@include md {
+					font-size: 20px;
+					line-height: 28px;
+				}
+			}
+
+			.overview {
+				margin-bottom: 25px;
+				.heading {
+					font-size: 24px;
+					margin-bottom: 10px;
+				}
+				.description {
+					font-weight: 400;
+					line-height: 1.6rem;
+					text-align: justify;
+					@include md {
+						padding-right: 100px;
+					}
+				}
+			}
+			.info {
+				color: whitesmoke;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+				padding: 15px 0;
+				display: flex;
+				.infoItem {
+					margin-right: 10px;
+					display: flex;
+					flex-flow: row wrap;
+				}
+				.text {
+					margin-right: 10px;
+					opacity: 0.6;
+					line-height: 24px;
+					&.bold {
+						font-weight: 400;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+	.castDetailsBannerSkeleton {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		gap: 25px;
+		@include md {
+			gap: 50px;
+			flex-direction: row;
+		}
+		.wrapper {
+			display: flex;
+			gap: 50px;
+		}
+		.left {
+			flex-shrink: 0;
+			width: 100%;
+			display: block;
+			border-radius: 12px;
+			aspect-ratio: 1/1.5;
+			@include md {
+				max-width: 350px;
+			}
+		}
+		.right {
+			width: 100%;
+			.row {
+				width: 100%;
+				height: 25px;
+				margin-bottom: 20px;
+				border-radius: 50px;
+				&:nth-child(2) {
+					width: 75%;
+					margin-bottom: 50px;
+				}
+				&:nth-child(5) {
+					width: 50%;
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+}

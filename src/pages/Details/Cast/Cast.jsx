@@ -1,7 +1,9 @@
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import avatar from '../../../assets/avatar.svg';
 import ContentWrapper from '../../../components/ContentWrapper/ContentWrapper';
 import LazyImage from '../../../components/LazyLoadImage/LazyImage';
+import useFetch from '../../../hooks/useFetch';
 import './cast.scss';
 
 const Cast = ({ data, loading }) => {
@@ -15,6 +17,7 @@ const Cast = ({ data, loading }) => {
 			</div>
 		);
 	};
+	const navigate = useNavigate();
 	return (
 		<div className='castSection'>
 			<ContentWrapper>
@@ -27,6 +30,7 @@ const Cast = ({ data, loading }) => {
 								<div
 									key={item.id}
 									className='listItem'
+									onClick={() => navigate(`/person/${item.id}`)}
 								>
 									<div className='profileImg'>
 										<LazyImage src={imgUrl} />

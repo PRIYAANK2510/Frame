@@ -2,15 +2,16 @@ import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import './rating.scss';
 
-const CircleRating = ({ rating }) => {
+const CircleRating = ({ rating, max = 10 }) => {
+	const percent = (rating / max) * 100;
 	return (
 		<div className='circleRating'>
 			<CircularProgressbar
 				value={rating}
-				maxValue={10}
+				maxValue={max}
 				text={rating}
 				styles={buildStyles({
-					pathColor: rating < 5 ? 'red' : rating < 7 ? 'orange' : 'green',
+					pathColor: percent < 50 ? 'red' : percent < 70 ? 'orange' : 'green',
 				})}
 			/>
 		</div>
