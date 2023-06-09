@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { SlArrowLeft, SlArrowRight } from 'react-icons/sl';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import NoMovie from '../../../assets/no_movie.svg';
+import NoImage from '../../../assets/avatar.svg';
 import ContentWrapper from '../../../components/ContentWrapper/ContentWrapper';
 import LazyImage from '../../../components/LazyLoadImage/LazyImage';
 import useFetch from '../../../hooks/useFetch';
@@ -52,7 +52,7 @@ const CastImage = () => {
 								ref={carouselContainer}
 							>
 								{data?.profiles?.map((item, index) => {
-									const image = item.file_path ? url.poster + item.file_path : NoMovie;
+									const image = item.file_path ? url.poster + item.file_path : NoImage;
 									return (
 										<a
 											className='carouselItem'
