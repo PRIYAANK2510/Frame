@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchDataFromApi } from './api/api';
-import PageRoutes from './routes/pageRoutes';
+import PageRoutes from './routes/PageRoutes';
 import { getApiConfiguration, getGenres } from './store/homeSlice';
 
 function App() {
