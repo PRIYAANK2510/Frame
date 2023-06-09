@@ -43,62 +43,66 @@ const CastTvSeries = () => {
 	};
 
 	return (
-		<div className='castMovies'>
-			<ContentWrapper>
-				{<div className='carouselTitle'>Appeared in Series</div>}
-				<SlArrowLeft
-					className='carouselLeftNav arrow'
-					onClick={() => navigation('left')}
-				/>
-				<SlArrowRight
-					className='carouselRightNav arrow'
-					onClick={() => navigation('right')}
-				/>
-				{!loading ? (
-					<div
-						className='carouselItems'
-						ref={carouselContainer}
-					>
-						{data?.cast?.map((item) => {
-							const posterUrl = item.poster_path
-								? url.poster + item.poster_path
-								: NoMovie;
-							return (
-								<div
-									className='carouselItem'
-									onClick={() => navigate(`/tv/${item.id}`)}
-									key={item.id}
-								>
-									<div className='posterBlock'>
-										<LazyImage
-											src={posterUrl}
-											alt='movie_poster'
-										/>
-										<Genres data={item.genre_ids.slice(0, 2)} />
-									</div>
-									<div className='textBlock'>
-										<span className='title'>{item.title || item.name}</span>
-										<span className='character'>{item.character}</span>
-										<span className='date'>
-											{dayjs(item.release_Date).format('MMM D, YYYY')}
-										</span>
-									</div>
-								</div>
-							);
-						})}
-					</div>
-				) : (
-					<div className='loadingSkeleton'>
-						{skItem()}
-						{skItem()}
-						{skItem()}
-						{skItem()}
-						{skItem()}
-						{skItem()}
-					</div>
-				)}
-			</ContentWrapper>
-		</div>
+		<>
+			{data?.cast?.length && (
+				<div className='castTvSeries'>
+					<ContentWrapper>
+						{<div className='carouselTitle'>Appeared in Series</div>}
+						<SlArrowLeft
+							className='carouselLeftNav arrow'
+							onClick={() => navigation('left')}
+						/>
+						<SlArrowRight
+							className='carouselRightNav arrow'
+							onClick={() => navigation('right')}
+						/>
+						{!loading ? (
+							<div
+								className='carouselItems'
+								ref={carouselContainer}
+							>
+								{data?.cast?.map((item) => {
+									const posterUrl = item.poster_path
+										? url.poster + item.poster_path
+										: NoMovie;
+									return (
+										<div
+											className='carouselItem'
+											onClick={() => navigate(`/tv/${item.id}`)}
+											key={item.id}
+										>
+											<div className='posterBlock'>
+												<LazyImage
+													src={posterUrl}
+													alt='movie_poster'
+												/>
+												<Genres data={item.genre_ids.slice(0, 2)} />
+											</div>
+											<div className='textBlock'>
+												<span className='title'>{item.title || item.name}</span>
+												<span className='character'>{item.character}</span>
+												<span className='date'>
+													{dayjs(item.release_Date).format('MMM D, YYYY')}
+												</span>
+											</div>
+										</div>
+									);
+								})}
+							</div>
+						) : (
+							<div className='loadingSkeleton'>
+								{skItem()}
+								{skItem()}
+								{skItem()}
+								{skItem()}
+								{skItem()}
+								{skItem()}
+							</div>
+						)}
+					</ContentWrapper>
+				</div>
+			)}
+		</>
 	);
 };
 export default CastTvSeries;

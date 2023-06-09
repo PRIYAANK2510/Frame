@@ -33,53 +33,57 @@ const CastImage = () => {
 	};
 
 	return (
-		<div className='castImage'>
-			<ContentWrapper>
-				{<div className='carouselTitle'>Images</div>}
-				<SlArrowLeft
-					className='carouselLeftNav arrow'
-					onClick={() => navigation('left')}
-				/>
-				<SlArrowRight
-					className='carouselRightNav arrow'
-					onClick={() => navigation('right')}
-				/>
-				{!loading ? (
-					<div
-						className='carouselItems'
-						ref={carouselContainer}
-					>
-						{data?.profiles?.map((item, index) => {
-							const image = item.file_path ? url.poster + item.file_path : NoMovie;
-							return (
-								<a
-									className='carouselItem'
-									target='_blank'
-									href={image}
-									key={`img${index}`}
-								>
-									<div className='posterBlock'>
-										<LazyImage
-											src={image}
-											alt='image'
-										/>
-									</div>
-								</a>
-							);
-						})}
-					</div>
-				) : (
-					<div className='loadingSkeleton'>
-						{skItem()}
-						{skItem()}
-						{skItem()}
-						{skItem()}
-						{skItem()}
-						{skItem()}
-					</div>
-				)}
-			</ContentWrapper>
-		</div>
+		<>
+			{data?.profiles?.length && (
+				<div className='castImage'>
+					<ContentWrapper>
+						{<div className='carouselTitle'>Images</div>}
+						<SlArrowLeft
+							className='carouselLeftNav arrow'
+							onClick={() => navigation('left')}
+						/>
+						<SlArrowRight
+							className='carouselRightNav arrow'
+							onClick={() => navigation('right')}
+						/>
+						{!loading ? (
+							<div
+								className='carouselItems'
+								ref={carouselContainer}
+							>
+								{data?.profiles?.map((item, index) => {
+									const image = item.file_path ? url.poster + item.file_path : NoMovie;
+									return (
+										<a
+											className='carouselItem'
+											target='_blank'
+											href={image}
+											key={`img${index}`}
+										>
+											<div className='posterBlock'>
+												<LazyImage
+													src={image}
+													alt='image'
+												/>
+											</div>
+										</a>
+									);
+								})}
+							</div>
+						) : (
+							<div className='loadingSkeleton'>
+								{skItem()}
+								{skItem()}
+								{skItem()}
+								{skItem()}
+								{skItem()}
+								{skItem()}
+							</div>
+						)}
+					</ContentWrapper>
+				</div>
+			)}
+		</>
 	);
 };
 export default CastImage;

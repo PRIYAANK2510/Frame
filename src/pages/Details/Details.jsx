@@ -23,10 +23,12 @@ const Details = () => {
 				data={credits?.cast}
 				loading={creditsLoading}
 			/>
-			<VideoSection
-				data={data}
-				loading={loading}
-			/>
+			{data?.results?.length && (
+				<VideoSection
+					data={data}
+					loading={loading}
+				/>
+			)}
 			<Similar
 				mediaType={mediaType}
 				id={id}
