@@ -27,7 +27,9 @@ Users should be able to:
 
 ### Screenshot
 
-
+![HomePage](/ss1.png)
+![Movie Details](/ss2.png)
+![Cast Details](/ss3.png)
 
 ### Links
 
