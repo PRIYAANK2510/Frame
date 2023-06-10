@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { HiOutlineMenu } from 'react-icons/hi';
-import { IoCloseOutline, IoMenuOutline, IoSearchOutline } from 'react-icons/io5';
+import { IoCloseOutline, IoSearchOutline } from 'react-icons/io5';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import './header.scss';
