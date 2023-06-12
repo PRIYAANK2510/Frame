@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import Recommendation from './Carousel/Recommendation';
 import Similar from './Carousel/Similar';
@@ -12,7 +13,11 @@ const Details = () => {
 	const { data: credits, loading: creditsLoading } = useFetch(
 		`/${mediaType}/${id}/credits`
 	);
+	const location = useLocation();
 
+	useEffect(() => {
+		window.scrollTo(0, 1);
+	}, [location]);
 	return (
 		<div>
 			<DetailBanner
