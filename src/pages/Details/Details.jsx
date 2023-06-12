@@ -16,7 +16,7 @@ const Details = () => {
 	return (
 		<div>
 			<DetailBanner
-				video={data?.results?.[0]}
+				video={data?.results?.filter((vid) => vid.type === 'Trailer')?.[0]}
 				crew={credits?.crew}
 			/>
 			<Cast
